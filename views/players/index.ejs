@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Players</title>
+  </head>
+  <body>
+    <h1>Players</h1>
+    <a href="/players/new">Create Player</a>
+    <ul>
+      <% players.forEach(function(p) { %>
+        <a href="/players/<%= p.id %>"><li><%= p.player %> </a> | <%= p.strength %> | <%= p.dexterity %> | <%= p.constitution %> | <%= p.intelligence %> | <%= p.wisdom %>| <%= p.charisma %>| <%= p.weaponSkill %>| <%= p.balisticSkill %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
