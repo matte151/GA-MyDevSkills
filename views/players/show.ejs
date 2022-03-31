@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>Player #<%= playerNum %></h1>
-	<h3><%= player.player %></h3>
-	<h3>Strength: <%= player.strength %></h3>
+	<h3><%= player.player %>  <a href="/players/<%= player.id%>/edit">Edit</a> </h3>
+	<h3>Strength: <%= player.strength %> <a href="/players/<%= player.id%>/edit">Edit</a></h3>
     <h3>Dexterity: <%= player.dexterity %></h3>
     <h3>Constitution: <%= player.constitution %></h3>
     <h3>Intelligence: <%= player.intelligence %></h3>
@@ -21,3 +21,4 @@
     
 </body>
 </html>
+

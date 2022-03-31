@@ -1,10 +1,14 @@
+const res = require('express/lib/response')
 const Player = require('../models/player')
 
 module.exports = {
     index,
     show,
     new: newPlayer,
-    create
+    create,
+    delete: deleteRecord,
+    edit,
+    update
     // shorthande for index:index
 
 }
@@ -32,4 +36,17 @@ function create(req,res){
     //creates always respond with a redirect
     res.redirect('/players');
     Player.create(req.body)
+}
+function deleteRecord(req,res){
+    Player.deleteRecord(req.params.id)
+    res.redirect('/players')
+}
+function edit(req, res){
+    res.render('players/edit', {
+        player: Player.getOne(req.params.id)
+    })
+}
+function update(req, res){
+    Player.update(req.params.id, req.body)
+    res.redirect('/players')
 }

@@ -11,7 +11,9 @@ const players = [
   module.exports = {
 	getAll,
 	getOne,
-	create
+	create,
+  deleteRecord,
+  update
   };
   
   function getAll() {
@@ -36,4 +38,15 @@ const players = [
     player.weaponSkill = 10;
     player.balisticSkill = 10;
 	  players.push(player);
+  }
+
+  function deleteRecord(id){
+    const playerRecord = players.findIndex(player => player.id === parseInt(id));
+    players.splice(playerRecord,1)
+  }
+
+  function update(id, player) {
+    const idx = players.findIndex((record) => record.id === parseInt(id));
+    player.id=parseInt(id);
+    players.splice(idx, 1, player)
   }

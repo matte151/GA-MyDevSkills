@@ -6,10 +6,16 @@ router.get('/', playerController.index);
 
 router.get('/new', playerController.new);
 
+
 router.get('/:id', playerController.show);
+router.get('/:id/edit', playerController.edit)
+router.put('/:id', playerController.update)
 
 
 router.post('/', playerController.create);
+
+router.delete('/:id', playerController.delete)
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

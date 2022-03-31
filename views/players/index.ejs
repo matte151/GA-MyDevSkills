@@ -11,7 +11,10 @@
     <a href="/players/new">Create Player</a>
     <ul>
       <% players.forEach(function(p) { %>
-        <a href="/players/<%= p.id %>"><li><%= p.player %> </a> | <%= p.strength %> | <%= p.dexterity %> | <%= p.constitution %> | <%= p.intelligence %> | <%= p.wisdom %>| <%= p.charisma %>| <%= p.weaponSkill %>| <%= p.balisticSkill %></li>
+        <a href="/players/<%= p.id %>"><li><%= p.player %> </a> | <%= p.strength %> | <%= p.dexterity %> | <%= p.constitution %> | <%= p.intelligence %> | <%= p.wisdom %>| <%= p.charisma %>| <%= p.weaponSkill %>| <%= p.balisticSkill %>
+          <form action="/players/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">Delete <%= p.player %> </button>
+        </form></li>
       <% }); %>
     </ul>
   </body>
